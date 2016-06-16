@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^app01/uid(\d+)name(\w+)/$', 'app01.views.index'),
 #     url(r'^app01/(?P<uid>\d{2})/$', index),
+    url(r'^app01/regist$', 'app01.views.regist'),
 ]

@@ -6,5 +6,24 @@
 <body>
 	id:{{uid}}
 	<br> name:{{name}}
+	<br>student.id:{{student.id}}
+	<br>student.number:{{student.number}}
+	<br>user.name:{{user.name}}
+	<br>user.age:{{user.age}}
+	<br>user.sex:{{user.sex}}
+	<br>user.say:{{user.say}}
+	<br>
+	<ul>
+		<li>{{book_list.0}}</li>
+		<li>{{book_list.1}}</li>
+		<li>{{book_list.2}}</li>
+		<li>================= for 循环结果  ====================</li>
+	{% for book in book_list %}
+		<li>{{forloop.counter}}:{{book}}</li>
+    {% empty %}
+                     传入的变量值为空
+	{% endfor %}
+	</ul>
+	
 </body>
 </html>
