@@ -45,3 +45,5 @@ def index(req, uid, name):
     book_list=['java','python','c++']
     person_list=[]
     return render_to_response('index.html', {'title':'my page', 'uid':uid, 'name':name,'student':student,'user':user,'book_list':book_list,'person_list':person_list})
+
+

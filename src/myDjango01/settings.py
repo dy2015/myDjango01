@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import app01
+import app02
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app01',
+    'app02',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'myDjango01.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'app01/templates/'),],
+        'DIRS': [ os.path.join(BASE_DIR, 'app01/templates/'),os.path.join(BASE_DIR, 'app02/templates/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
