@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<title>{{title}}</title>
+<body>
+	<form method="POST">
+	{{form.as_p}}
+     <input type="submit" value="ok">
+	</form>
+	{% if flag %}
+	   用户名和密码不匹配，请重新输入
+	{% endif %}
+	<br>
+     <a href="../regist/">返回注册页</a>
+</body>
+</html>

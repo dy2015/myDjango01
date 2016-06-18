@@ -1,8 +1,26 @@
+
 Diango+python+eclipse搭建web项目时步骤时，需注意以下几点：
+
 一、Diango1.7版本以上，自带了一些表结构，必须通过doc进入到项目src目录中，运行“python manage.py migrate”命令。此时，会出现一个“db.sqlite3”文件。
+
 二、查看电脑的8000端口是否被占用（酷狗容易占用该端口），可以通过如下命令，在doc中查看该端口使用情况，并释放该端口。
    1、netstat -ano | findstr "8000"   ：     查看8000端口占用情况
              查看结果：TCP    0.0.0.0:8000           0.0.0.0:0              LISTENING       5804
    2、tasklist | findstr "5804"       ：     查看是什么进程占用了该端口
              查看结果：KGService.exe                 5804 Console            1      8,884 K
-      
+ 
+ 三、Django 使用sqlite3
+   1、在doc命令中，进入数据库文件存放的地址。
+   2、输入“python manage.py shell”，打开数据库。
+   3、输入“from django.db import connection”
+        “cur = connection.cursor()”连接数据库。
+   4、输入“print cur.execute("SELECT name FROM sqlite_master WHERE
+               type='table';").fetchall()”，可以查看数据库有哪些表。
+   5、输入“print cur.execute("SELECT * FROM app02_user;").fetchall()”，查看某表的内容。
+   
+
+   
+   
+   
+   
+   
