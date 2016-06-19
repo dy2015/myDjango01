@@ -16,14 +16,19 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from app01.views import index
+admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
     url(r'^app01/uid(\d+)name(\w+)/$', 'app01.views.index'),
     url(r'^app01/(?P<uid>\d{2})/$', index),
     url(r'^app01/regist/$', 'app01.views.regist'),
+    
     url(r'^app02/regist/$', 'app02.views.regist'),
     url(r'^app02/login/$', 'app02.views.login'),
     url(r'^app02/index/$', 'app02.views.index'),
-    url(r'^app02/logout/$', 'app02.views.logout'),
-        
+    
+    url(r'^session/login/$', 'session.views.login'),  
+    url(r'^session/index/$', 'session.views.index'), 
+    url(r'^session/logout/$', 'session.views.logout'), 
 ]

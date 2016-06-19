@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-import app01
-import app02
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app01',
     'app02',
+    'session',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -59,7 +58,7 @@ ROOT_URLCONF = 'myDjango01.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'app01/templates/'),os.path.join(BASE_DIR, 'app02/templates/'),],
+        'DIRS': [ os.path.join(BASE_DIR, 'app01/templates/'),os.path.join(BASE_DIR, 'app02/templates/'),os.path.join(BASE_DIR, 'session/templates/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,6 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'demo.db'),
+        'USER':'root',
+        'PASSWORD':'1',
     }
 }
 
